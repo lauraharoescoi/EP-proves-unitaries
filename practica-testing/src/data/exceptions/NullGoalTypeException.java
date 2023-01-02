@@ -1,7 +1,7 @@
 package data.exceptions;
 
 public class NullGoalTypeException extends Exception {
-    public NullGoalTypeException() {
-        super("The goal type is null");
+    public NullGoalTypeException(String comment) {
+        super(comment);
     }
 }

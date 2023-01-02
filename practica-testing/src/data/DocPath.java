@@ -8,7 +8,7 @@ public class DocPath {
     public DocPath (String path) { this.path = path; }
 
     public String getPath () throws BadPathException {
-        if (path == null) throw new BadPathException();
+        if (path == null) throw new BadPathException("No s'ha introduït cap adreça");
         return path;
     }
 

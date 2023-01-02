@@ -9,7 +9,7 @@ public class Goal {
     }
 
     public goalTypes getGoalType () throws NullGoalTypeException {
-        if (goalType == null) throw new NullGoalTypeException();
+        if (goalType == null) throw new NullGoalTypeException("No existeix cap Goal");
         return goalType;
     }
 

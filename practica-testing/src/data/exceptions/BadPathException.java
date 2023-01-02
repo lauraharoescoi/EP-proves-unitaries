@@ -1,7 +1,7 @@
 package data.exceptions;
 
 public class BadPathException extends Exception {
-    public BadPathException() {
-        super("The path does not exist");
+    public BadPathException(String comment) {
+        super(comment);
     }
 }

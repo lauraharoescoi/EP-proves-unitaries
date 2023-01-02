@@ -1,7 +1,8 @@
 package data.exceptions;
 
 public class DigitalSignatureException extends Exception {
-    public DigitalSignatureException() {
-        super("The digital signature is null");
+    public DigitalSignatureException(String comment) {
+        super(comment);
     }
+
 }

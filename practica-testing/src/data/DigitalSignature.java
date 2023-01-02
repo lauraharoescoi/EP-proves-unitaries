@@ -2,6 +2,10 @@ package data;
 
 import data.exceptions.DigitalSignatureException;
 
+public class DigitalSignature package data;
+
+        import data.exceptions.DigitalSignatureException;
+
 public class DigitalSignature {
 
     private final Byte[] signature;
@@ -9,7 +13,7 @@ public class DigitalSignature {
     public DigitalSignature (Byte[] signature) { this.signature = signature; }
 
     public Byte[] getSignature () throws DigitalSignatureException {
-        if (signature == null) throw new DigitalSignatureException();
+        if (signature == null) throw new DigitalSignatureException("The digital signature is null");
         return signature;
     }
 

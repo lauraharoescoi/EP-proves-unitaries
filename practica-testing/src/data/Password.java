@@ -8,7 +8,7 @@ public class Password {
     public Password (String password) { this.password = password; }
 
     public String getPassword () throws InvalidPassword {
-        if ( password == null || password.length() < 8) throw new InvalidPassword();
+        if ( password == null || password.length() < 8) throw new InvalidPassword("La contrassenya ha de tenir com a minim 8 caracters");
         return password;
     }
 

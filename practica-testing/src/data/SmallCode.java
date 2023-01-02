@@ -8,10 +8,10 @@ public class SmallCode {
     public SmallCode (String code) { this.code = code; }
 
     public String getCode () throws SmallCodeException {
-        if (code == null) throw new SmallCodeException();
-        if (code.length() != 3) throw new SmallCodeException();
+        if (code == null) throw new SmallCodeException("Nombre secret no introduït");
+        if (code.length() != 3) throw new SmallCodeException("El nombre secret és format per 3 digits");
         for (int i = 0; i < 3; i++) {
-            if (!Character.isDigit(code.charAt(i))) throw new SmallCodeException();
+            if (!Character.isDigit(code.charAt(i))) throw new SmallCodeException("El nobre secret no pot estar composat per lletres");
         }
         return code;
     }
