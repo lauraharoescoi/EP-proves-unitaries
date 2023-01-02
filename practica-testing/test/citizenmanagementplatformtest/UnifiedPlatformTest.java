@@ -196,5 +196,71 @@ public class UnifiedPlatformTest {
         assertEquals("Printing document . . .", outContent.toString().strip());
     }
 
+    @Test
+    public void nifNotRegisteredTest() throws ProceduralException {
+        //previous steps
+        byte method = 3;
+        platform.selectJusMin();
+        platform.selectProcedures();
+        platform.selectCriminalReportCertf();
+        platform.selectAuthMethod(method);
+        platform.injectAuthenticationMethod(new CertificationAuthorityDumm(citizen));
+        Throwable exception = assertThrows(NifNotRegisteredException.class, () -> platform.enterNIFandPINobt(new Nif("12345678B"), valDate));
+        assertEquals("NIF not registered",exception.getMessage());
+    }
+
+    @Test
+    public void IncorrectValDateTest() throws ProceduralException {
+        //previous steps
+        byte method = 3;
+        platform.selectJusMin();
+        platform.selectProcedures();
+        platform.selectCriminalReportCertf();
+        platform.selectAuthMethod(method);
+        platform.injectAuthenticationMethod(new CertificationAuthorityDumm(citizen));
+        Throwable exception = assertThrows(IncorrectValDateException.class, () -> platform.enterNIFandPINobt(citizen.getNif(), new Date()));
+        assertEquals("guarra",exception.getMessage());
+    }
+
+    @Test
+    public void anyMobileRegisteredTest() throws ProceduralException {
+        //previous steps
+        byte method = 3;
+        platform.selectJusMin();
+        platform.selectProcedures();
+        platform.selectCriminalReportCertf();
+        platform.selectAuthMethod(method);
+        Citizen noNumCitz = new Citizen();
+        noNumCitz.copyCitizen(citizen);
+        noNumCitz.setPhoneNumber(null);
+        platform.injectAuthenticationMethod(new CertificationAuthorityDumm(noNumCitz));
+        Throwable exception = assertThrows(AnyMobileRegisteredException.class, () -> platform.enterNIFandPINobt(noNumCitz.getNif(), valDate));
+        assertEquals("guarra",exception.getMessage());
+    }
+
+    @Test
+    public void notValidPaymentDataTest() throws ProceduralException, ConnectException,
+            NotValidPINException, SmallCodeException, IncompleteFormException, IncorrectVerificationException
+    {
+        //previous steps
+        byte method = 3;
+        platform.selectJusMin();
+        platform.selectProcedures();
+        platform.selectCriminalReportCertf();
+        platform.selectAuthMethod(method);
+        platform.injectAuthenticationMethod(new CertificationAuthorityDumm(citizen));
+        platform.enterPIN(new SmallCode("123"));
+        platform.injectGPD(new GPDDumm(citizen));
+        platform.enterForm(citizen, new Goal(goalTypes.WORKWITHMINORS));
+        platform.realizePayment();
+        CreditCard credC1 = new CreditCard(citizen.getNif(), "123", new Date(), new SmallCode("123"));
+        CreditCard credC2 = new CreditCard(citizen.getNif(), "123", new Date(), new SmallCode("321"));
+        platform.injectCAS(new CASDumm(credC1));
+
+
+        Throwable exception = assertThrows(NotValidPaymentDataException.class, () -> platform.enterCardData(credC2
+        ));
+        assertEquals("Data d'expiració incorrecta",exception.getMessage());
+    }
 
 }
