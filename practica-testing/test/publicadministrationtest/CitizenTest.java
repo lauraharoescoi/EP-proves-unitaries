@@ -11,6 +11,8 @@ import publicadministration.CreditCard;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class CitizenTest {
     Citizen citizen;
     private Date date;

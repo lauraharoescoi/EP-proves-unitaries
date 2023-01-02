@@ -9,6 +9,8 @@ import publicadministration.PDFDocument;
 import java.io.File;
 import java.io.IOException;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class PDFDocumentTest {
 
     private PDFDocument pdf;
@@ -18,10 +20,10 @@ public class PDFDocumentTest {
 
     @BeforeEach
     public void setUp() throws BadPathException, IOException {
-        sourceFile = new File("./PDFdoc.pdf");
+        sourceFile = new File("./PDFdoc2.pdf");
         sourceFile.createNewFile();
         pdf = new PDFDocument();
-        path = new DocPath("PDFdoc.pdf");
+        path = new DocPath("PDFdoc2.pdf");
     }
 
     @Test

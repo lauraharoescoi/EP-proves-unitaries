@@ -7,10 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class DigitalSignatureTest {
 
-    @Test
-    void testCorrectSignature() {
-
-    }
 
     @Test
     void testNullThrowsDigitalSignatureException(){

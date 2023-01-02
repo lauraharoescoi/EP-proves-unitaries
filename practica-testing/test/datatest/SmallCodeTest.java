@@ -16,28 +16,28 @@ public class SmallCodeTest {
     void testShortSmallCode(){
         SmallCode smallCode = new SmallCode("12");
         Throwable exception = assertThrows(SmallCodeException.class, smallCode::getCode);
-        assertEquals("CVS code must be 3 digits", exception.getMessage());
+        assertEquals("El nombre secret és format per 3 digits", exception.getMessage());
     }
 
     @Test
     void testLongSmallCode(){
         SmallCode smallCode = new SmallCode("1234");
         Throwable exception = assertThrows(SmallCodeException.class, smallCode::getCode);
-        assertEquals("CVS code must be 3 digits", exception.getMessage());
+        assertEquals("El nombre secret és format per 3 digits", exception.getMessage());
     }
 
     @Test
     void testSmallCodeWithLetters(){
         SmallCode smallCode = new SmallCode("12a");
         Throwable exception = assertThrows(SmallCodeException.class, smallCode::getCode);
-        assertEquals("CVS code must be 3 digits", exception.getMessage());
+        assertEquals("El nobre secret no pot estar composat per lletres", exception.getMessage());
     }
 
     @Test
     void testCodeCannotBeNull(){
         SmallCode smallCode = new SmallCode(null);
         Throwable exception = assertThrows(SmallCodeException.class, smallCode::getCode);
-        assertEquals("CVS code must be 3 digits", exception.getMessage());
+        assertEquals("Nombre secret no introduït", exception.getMessage());
     }
 
 }

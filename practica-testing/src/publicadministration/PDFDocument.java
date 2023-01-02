@@ -14,7 +14,7 @@ import java.util.Date;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 public class  PDFDocument {
-    private static final String DEF_PATH = "PDFdoc.pdf";
+    private static final String DEF_PATH = "PDFdoc2.pdf";
     private Date creatDate;
     private DocPath path;
     private File file;

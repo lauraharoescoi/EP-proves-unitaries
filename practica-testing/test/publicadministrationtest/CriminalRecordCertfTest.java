@@ -11,6 +11,8 @@ import publicadministration.CriminalRecordCertf;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class CriminalRecordCertfTest {
 
     CriminalRecordCertf criminalRecordCertf;

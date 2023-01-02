@@ -8,6 +8,8 @@ import publicadministration.CardPayment;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class CardPaymentTest {
     CardPayment cardPayment;
     Nif nif;

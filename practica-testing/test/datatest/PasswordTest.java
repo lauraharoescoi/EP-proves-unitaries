@@ -16,14 +16,14 @@ public class PasswordTest {
     void testShortPassword(){
         Password password = new Password("1234567");
         Throwable exception = assertThrows(InvalidPassword.class, password::getPassword);
-        assertEquals("Password must have at least 8 characters", exception.getMessage());
+        assertEquals("La contrassenya ha de tenir com a minim 8 caracters", exception.getMessage());
     }
 
     @Test
     void testPasswordCannotBeNull(){
         Password password = new Password(null);
         Throwable exception = assertThrows(InvalidPassword.class, password::getPassword);
-        assertEquals("Password must have at least 8 characters", exception.getMessage());
+        assertEquals("La contrassenya ha de tenir com a minim 8 caracters", exception.getMessage());
     }
 
 }

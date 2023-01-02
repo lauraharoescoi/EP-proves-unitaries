@@ -8,6 +8,8 @@ import publicadministration.CrimConviction;
 
 import java.util.Date;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class CrimConvictionTest {
     CrimConviction crimConviction;
     Date date;

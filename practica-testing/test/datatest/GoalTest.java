@@ -9,6 +9,6 @@ public class GoalTest {
     void testNullThrowsNullGoalTypeException(){
         Goal goal = new Goal(null);
         Throwable exception = assertThrows(NullGoalTypeException.class, goal::getGoalType);
-        assertEquals("The goal type is null", exception.getMessage());
+        assertEquals("No existeix cap Goal", exception.getMessage());
     }
 }

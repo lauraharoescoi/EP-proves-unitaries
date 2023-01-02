@@ -16,42 +16,42 @@ public class NifTest {
     void testShortNif (){
         Nif nif = new Nif("1234567A");
         Throwable exception = assertThrows(IncorrectNifException.class, nif::getNif);
-        assertEquals("The NIF is incorrect", exception.getMessage());
+        assertEquals("Longitud del NIF incorrecte", exception.getMessage());
     }
 
     @Test
     void testLongNif (){
         Nif nif = new Nif("123456789A");
         Throwable exception = assertThrows(IncorrectNifException.class, nif::getNif);
-        assertEquals("The NIF is incorrect", exception.getMessage());
+        assertEquals("Longitud del NIF incorrecte", exception.getMessage());
     }
 
     @Test
     void testNifWithLetters (){
         Nif nif = new Nif("1234567Aa");
         Throwable exception = assertThrows(IncorrectNifException.class, nif::getNif);
-        assertEquals("The NIF is incorrect", exception.getMessage());
+        assertEquals("El NIF no pot està composat de lletres", exception.getMessage());
     }
 
     @Test
     void testNifWithNumbers (){
         Nif nif = new Nif("1234567A1");
         Throwable exception = assertThrows(IncorrectNifException.class, nif::getNif);
-        assertEquals("The NIF is incorrect", exception.getMessage());
+        assertEquals("És necessari introduir la lletra al final del NIF", exception.getMessage());
     }
 
     @Test
     void testNullNif (){
         Nif nif = new Nif(null);
         Throwable exception = assertThrows(IncorrectNifException.class, nif::getNif);
-        assertEquals("The NIF is incorrect", exception.getMessage());
+        assertEquals("NIF no introduït", exception.getMessage());
     }
 
     @Test
     void testEmptyNif (){
         Nif nif = new Nif("");
         Throwable exception = assertThrows(IncorrectNifException.class, nif::getNif);
-        assertEquals("The NIF is incorrect", exception.getMessage());
+        assertEquals("Longitud del NIF incorrecte", exception.getMessage());
     }
 
 }
