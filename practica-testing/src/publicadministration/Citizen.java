@@ -3,7 +3,6 @@ package publicadministration;
 import data.Nif;
 
 import java.util.Date;
-import java.util.Objects;
 
 public class Citizen {
 
@@ -15,8 +14,7 @@ public class Citizen {
     private CreditCard credCard;
     private CardPayment latestPayment;
 
-
-    public Citizen(){
+    public Citizen() {
         this.name = null;
         this.nif = null;
         this.address = null;
@@ -28,6 +26,7 @@ public class Citizen {
     public Nif getNif() { return nif; }
 
     public Date getExpDate() { return valDate; }
+
 
     public String getName() {
         return name;
@@ -95,5 +94,6 @@ public class Citizen {
     @Override
     public int hashCode() {
         return Objects.hash(nif, valDate, name, address, phoneNumber, credCard, latestPayment);
+
     }
 }
