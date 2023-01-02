@@ -1,7 +1,7 @@
 package exceptions;
 
 public class NotValidPINException extends Exception {
-    public NotValidPINException() {
-        super("guarra");
+    public NotValidPINException(String comment) {
+        super(comment);
     }
 }

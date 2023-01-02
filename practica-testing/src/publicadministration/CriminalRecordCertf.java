@@ -1,9 +1,7 @@
 package publicadministration;
 
-import data.DigitalSignature;
 import data.Goal;
 import data.Nif;
-import publicadministration.CrimConvictionsColl;
 
 public class CriminalRecordCertf {
     private Nif nif;

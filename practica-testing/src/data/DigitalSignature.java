@@ -2,10 +2,6 @@ package data;
 
 import data.exceptions.DigitalSignatureException;
 
-public class DigitalSignature package data;
-
-        import data.exceptions.DigitalSignatureException;
-
 public class DigitalSignature {
 
     private final Byte[] signature;

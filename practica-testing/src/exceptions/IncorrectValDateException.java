@@ -1,7 +1,7 @@
 package exceptions;
 
 public class IncorrectValDateException extends Exception {
-    public IncorrectValDateException() {
-        super("guarra");
+    public IncorrectValDateException(String comment) {
+        super(comment);
     }
 }

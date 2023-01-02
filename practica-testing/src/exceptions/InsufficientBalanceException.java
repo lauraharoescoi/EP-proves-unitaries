@@ -1,7 +1,7 @@
 package exceptions;
 
 public class InsufficientBalanceException extends Exception {
-    public InsufficientBalanceException() {
-        super("guarra");
+    public InsufficientBalanceException(String comment) {
+        super(comment);
     }
 }
