@@ -1,20 +1,34 @@
 package publicadministration;
 
-import publicadministration.CrimConviction;
-
 import java.util.Date;
+import java.util.HashMap;
 
 public class CrimConvictionsColl {
 
-    public CrimConvictionsColl (){ . . . }
+    HashMap<Date, CrimConviction> crimes;
+    int numCrimes;
 
-    public addCriminalConviction (CrimConviction crmC){ . . . }
-    // Adds a criminal conviction
+    public CrimConvictionsColl(){
+        crimes = new HashMap<>();
+        numCrimes = 0;
+    }
 
-    public CrimConviction getCriminalConviction (Date date){ . . . }
-    // Gets a specific criminal conviction by date
+    public void addCriminalConviction (CrimConviction crmC){
+        crimes.put(crmC.getCommitDate(),crmC);
+        numCrimes++;
+    }
 
-    public String toString () { . . . } // Converts to String
+    public int getNumCrimes() {
+        return numCrimes;
+    }
+
+    public CrimConviction getCriminalConviction (Date date){
+        return crimes.get(date);
+    }
+
+    public String toString() {
+        return "CrimConvictionsColl{" + "crimes=" + crimes + ", numCrimes=" + numCrimes + '}';
+    }
 
 }
 
