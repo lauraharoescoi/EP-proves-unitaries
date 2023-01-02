@@ -2,6 +2,7 @@ package services;
 
 import data.Goal;
 import publicadministration.Citizen;
+import exceptions.*;
 
 public interface GPD {
 
